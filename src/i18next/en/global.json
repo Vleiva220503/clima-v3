@@ -1,0 +1,10 @@
+{
+  "Weather": "Weather App",
+  "Maximum": "Maximum temperature",
+  "Minimum": "Minimum Mitemperature",
+  "Wind": "Wind chill",
+  "to": "to find",
+  "city": "Write city name",
+  "not":"City not found",
+  "can":"Empty field"
+}
