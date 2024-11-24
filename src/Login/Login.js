@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { auth } from "./firebaseConfig";
+import { auth } from "../Login/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+
 import {
   Box,
   Button,
@@ -12,32 +13,43 @@ import {
   Heading,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Dato from "../components/Dato";
 
 const Login = ({ onRegister, onResetPassword }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Llama a los hooks al inicio del componente
+  const bgColor = useColorModeValue("gray.100", "gray.800");
+  const formBgColor = useColorModeValue("white", "gray.700");
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setMessage("¡Acceso concedido!");
+      setIsLoggedIn(true);
     } catch (error) {
       setMessage(`Error: ${error.message}`);
     }
   };
 
+  if (isLoggedIn) {
+    return <Dato />;
+  }
+
   return (
     <Box
-      bg={useColorModeValue("gray.100", "gray.800")}
+      bg={bgColor} // Usa la variable aquí
       minH="100vh"
       display="flex"
       alignItems="center"
       justifyContent="center"
     >
       <Box
-        bg={useColorModeValue("white", "gray.700")}
+        bg={formBgColor} // Usa la variable aquí
         p={8}
         rounded="lg"
         shadow="md"

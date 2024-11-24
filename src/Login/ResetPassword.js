@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth } from "./firebaseConfig";
+import { auth } from "../Login/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import {
   Box,
