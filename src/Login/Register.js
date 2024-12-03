@@ -50,7 +50,7 @@ const Register = ({ onLogin }) => {
         <form onSubmit={handleRegister}>
           <VStack spacing={4}>
           <FormControl>
-              <FormLabel>CNombre de Usuario</FormLabel>
+              <FormLabel>Nombre de Usuario</FormLabel>
               <Input
                 type="usuario"
                placeholder="user123"
