@@ -49,6 +49,15 @@ const Register = ({ onLogin }) => {
         </Heading>
         <form onSubmit={handleRegister}>
           <VStack spacing={4}>
+          <FormControl>
+              <FormLabel>CNombre de Usuario</FormLabel>
+              <Input
+                type="usuario"
+               placeholder="user123"
+              //  value={email}
+              //  onChange={(e) => setEmail(e.target.value)}
+              />
+            </FormControl>
             <FormControl>
               <FormLabel>Correo Electrónico</FormLabel>
               <Input
